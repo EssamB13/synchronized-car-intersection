@@ -1,0 +1,6 @@
+Essam Babu, Thomas Horga
+babuessa, horgadan
+Revision 48
+
+Discussion:
+We believe that starvation can occur in this monitor system because there is nothing stopping a lane or multiple lanes from repeatedly using the intersection. In other words, there is no strict scheduling policy being inforced. This system is based on acquiring the intersection, using it, and then releasing it. However, once the intersection is released, there is schedule for what lane takes it next. This could lead to a lane never accessing the intersection, so it's in_buf could be at capacity for an indefinite amount of time, causing the process to wait, and eventually starve. The solution to this could be to use a type of priority queue that dynamically changes priority based on how long a process has been waiting for CPU-time.    
